@@ -6,9 +6,6 @@
 OpenMP实现与MPI+OpenMP实现
 
 
-使用OpenBLAS,LABACK以及Open MPI
-
-
 ### 编译环境
 
 性能测试使用Intel编译器icc，并且依赖Intel MKL数学库,测试前请确保已经正确安装了Intel MKL库
