@@ -56,12 +56,12 @@ int main(int argc, char **argv) {
                 omp_threads = atoi(optarg);
                 break;
             default:
-                printf("Usage: mpi_mexp -f string \n");
+                printf("Usage: mpi_mexp -f string -t num_threads \n");
                 return 0;
         }
     }
     if (file_dir == NULL) {
-        printf("Usage: mpi_mexp -f string \n");
+        printf("Usage: mpi_mexp -f string -t num_threads \n");
         return 0;
     }
 
@@ -447,4 +447,3 @@ int main(int argc, char **argv) {
 
     MPI_Finalize();
 }
-

@@ -33,12 +33,12 @@ int main(int argc, char **argv) {
                 omp_threads = atoi(optarg);
                 break;
             default:
-                printf("Usage: mpi_cg -f string \n");
+                printf("Usage: mpi_cg -f string -t num_threads \n");
                 return 0;
         }
     }
     if (filename == NULL) {
-        printf("Usage: mpi_cg -f string \n");
+        printf("Usage: mpi_cg -f string -t num_threads \n");
         return 0;
     }
 
@@ -134,7 +134,7 @@ int main(int argc, char **argv) {
         MPI_Reduce(&loc_b_dot, &rho_new, 1, MPI_DOUBLE, MPI_SUM, qProcs - 1, rowComm);
         b_norm2 = sqrt(rho_new);
     }
-    
+
     int loopBreak = 0;
     while (true) {
         if (rank == world_root) {
